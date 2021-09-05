@@ -18,14 +18,14 @@ var sevenPM = $('#7pm');
 var hour = moment().hours();
 var userInput;
 var hourSpan;
-var hourString = $(".hour").text().split(" ");
+//var hourString = $(".hour").text().split(" ");
 
 //Calculate the date and hour in real time
 var interval = setInterval(function(){
 
-        var momentNow = moment();
-        $('#currentDay').html(momentNow.format('YYYY MMMM DD') + ' ' + momentNow.format('dddd').substring(0,3).toUpperCase());
-        $('#currentDay').html(currentDate + " " + momentNow.format('hh:mm:ss A'));
+    var momentNow = moment();
+    $('#currentDay').html(momentNow.format('YYYY MMMM DD') + ' ' + momentNow.format('dddd').substring(0,3).toUpperCase());
+    $('#currentDay').html(currentDate + " " + momentNow.format('hh:mm:ss A'));
 }, 100);
 
 //Store user's input and assign it to a time
@@ -33,38 +33,38 @@ function initPage(){
 
     console.log("Current Hour " + hour);
 
-    var init9 = JSON.parse(localStorage.getItem);
-    nineAM(init9);
+    var init9 = JSON.parse(localStorage.getItem("09:00 am"));
+    nineAM.val(init9);
 
-    var init10 = JSON.parse(localStorage.getItem);
-    nineAM(init10);
+    var init10 = JSON.parse(localStorage.getItem("10:00 am"));
+    tenAM.val(init10);
+    
+    var init11 = JSON.parse(localStorage.getItem("11:00 am"));
+    elevenAM.val(init11);
+    
+    var init12 = JSON.parse(localStorage.getItem("12:00 pm"));
+    twelveAM.val(init12);
+    
+    var init1 = JSON.parse(localStorage.getItem("01:00 pm"));
+    oneAM.val(init1);
+    
+    var init2 = JSON.parse(localStorage.getItem("02:00 pm"));
+    twoAM.val(init2);
+    
+    var init3 = JSON.parse(localStorage.getItem("03:00 pm"));
+    threeAM.val(init3);
+    
+    var init4 = JSON.parse(localStorage.getItem("04:00 pm"));
+    fourAM.val(init4);
 
-    var init11 = JSON.parse(localStorage.getItem);
-    nineAM(init11);
+    var init5 = JSON.parse(localStorage.getItem("05:00 pm"));
+    fiveAM.val(init5);
 
-    var init12 = JSON.parse(localStorage.getItem);
-    nineAM(init12);
-
-    var init1 = JSON.parse(localStorage.getItem);
-    nineAM(init1);
-
-    var init2 = JSON.parse(localStorage.getItem);
-    nineAM(init2);
-
-    var init3 = JSON.parse(localStorage.getItem);
-    nineAM(init3);
-
-    var init4 = JSON.parse(localStorage.getItem);
-    nineAM(init4);
-
-    var init5 = JSON.parse(localStorage.getItem);
-    nineAM(init5);
-
-    var init6 = JSON.parse(localStorage.getItem);
-    nineAM(init6);
-
-    var init7 = JSON.parse(localStorage.getItem);
-    nineAM(init7);
+    var init6 = JSON.parse(localStorage.getItem("06:00 pm"));
+    sixAM.val(init6);
+ 
+    var init7 = JSON.parse(localStorage.getItem("07:00 pm"));
+    sevenAM.val(init7);
 }
 
 function background(){
@@ -86,7 +86,7 @@ function background(){
     });
 }
 
-$(document).ready(functio(){
+$(document).ready(function(){
 
     initPage()
     background()
