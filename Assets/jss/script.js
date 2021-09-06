@@ -3,7 +3,7 @@
 var currentDate = moment().format('dddd') + " " + moment().format('Do MMM YYYY');
 var currentHour = moment().format('h:mm:ss a');
     //Hours
-var ninAm = $("#9am");
+var nineAm = $("#9am");
 var tenAm = $('#10am');
 var elevenAm = $('#11am');
 var twelvePm = $('#12am');
@@ -67,23 +67,21 @@ function initPage(){
 
 function background(){
 
-    $(".form-control").each(function(){
+    $(".form-control").each(function() {
+        
+        var timeTest = parseInt($(this).attr("id"));
+        console.log(timeTest);
+        hour = parseInt(hour);
+        console.log(timeTest);
+        console.log(hour);
 
-        $(".form-control").each(function() {
-            
-            var timeTest = parseInt($(this).attr("id"));
-            hour = parseInt(hour);
-            console.log(timeTest);
-            console.log(hour);
-
-            if (hour > timeTest) {
-                $(this).addClass("past");
-            } else if (hour < timeTest) {
-                $(this).addClass("future");
-            } else {
-                $(this).addClass("present");
-            }
-        });
+        if (hour > timeTest) {
+            $(this).addClass("past");
+        } else if (hour < timeTest) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
+        }
     });
 }
 
