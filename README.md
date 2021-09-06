@@ -1,4 +1,4 @@
-							Work Day Planner API
+						Work Day Planner API
 
 This website is built to store your schedule in an easy to use online planner. Your entries will be safely saved in the cloud, so even if you accidently refresh the page, your schedule will be uneffected as long as you have clicked the cloud upload button on the right of your entries.
 
