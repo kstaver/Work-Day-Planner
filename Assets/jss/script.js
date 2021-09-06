@@ -14,7 +14,7 @@ var fourPm = $('#16pm');
 var fivePm = $('#17pm');
 var sixPm = $('#18pm');
 var sevenPm = $('#19pm');
-moment
+
 var hour = moment().hours();
 var userInput;
 var hourSpan;
@@ -69,18 +69,19 @@ function background(){
 
     $(".form-control").each(function(){
 
-        $(".form-control").each(function () {
-            var timeTest = parseInt($(this).attr("id"));
+        $(".form-control").each(function() {
+            
+            var timeTest = parseInt(description.attr("id"));
             hour = parseInt(hour);
             console.log(timeTest);
             console.log(hour);
 
             if (hour > timeTest) {
-                $(this).addClass("past");
+                description.addClass("past");
             } else if (hour < timeTest) {
-                $(this).addClass("future");
+                description.addClass("future");
             } else {
-                $(this).addClass("present");
+                description.addClass("present");
             }
         });
     });
@@ -93,6 +94,8 @@ $(document).ready(function(){
 
     //Buttons for gathering data from a user and saving it
     $(".saveBtn").on("click", function (){
+
+        console.log(this);
 
         userInput = $(this).siblings(".form-control").val().trim();
         console.log(userInput);
