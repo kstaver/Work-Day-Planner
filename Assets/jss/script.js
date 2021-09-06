@@ -71,17 +71,17 @@ function background(){
 
         $(".form-control").each(function() {
             
-            var timeTest = parseInt(description.attr("id"));
+            var timeTest = parseInt($(this).attr("id"));
             hour = parseInt(hour);
             console.log(timeTest);
             console.log(hour);
 
             if (hour > timeTest) {
-                description.addClass("past");
+                $(this).addClass("past");
             } else if (hour < timeTest) {
-                description.addClass("future");
+                $(this).addClass("future");
             } else {
-                description.addClass("present");
+                $(this).addClass("present");
             }
         });
     });
