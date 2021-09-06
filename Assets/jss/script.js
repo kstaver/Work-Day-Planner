@@ -70,7 +70,6 @@ function background(){
     $(".form-control").each(function() {
         
         var timeTest = parseInt($(this).attr("id"));
-        console.log(timeTest);
         hour = parseInt(hour);
         console.log(timeTest);
         console.log(hour);
