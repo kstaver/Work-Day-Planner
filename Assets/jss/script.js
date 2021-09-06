@@ -68,19 +68,20 @@ function initPage(){
 function background(){
 
     $(".form-control").each(function() {
-        
-        var timeTest = parseInt($(this).attr("id"));
-        hour = parseInt(hour);
-        console.log(timeTest);
-        console.log(hour);
 
-        if (hour > timeTest) {
-            $(this).addClass("past");
-        } else if (hour < timeTest) {
-            $(this).addClass("future");
-        } else {
-            $(this).addClass("present");
-        }
+        $(".form-control").each(function() {
+            
+            var timeTest = parseInt($(this).attr("id"));
+            hour = parseInt(hour);
+
+            if (hour > timeTest) {
+                $(this).addClass("past");
+            } else if (hour < timeTest) {
+                $(this).addClass("future");
+            } else {
+                $(this).addClass("present");
+            }
+        });
     });
 }
 
@@ -92,12 +93,8 @@ $(document).ready(function(){
     //Buttons for gathering data from a user and saving it
     $(".saveBtn").on("click", function (){
 
-        console.log(this);
-
         userInput = $(this).siblings(".form-control").val().trim();
-        console.log(userInput);
         hourSpan = $(this).siblings(".inout-group-prepend").text().trim();
-        console.log(hourSpan);
         localStorage.setItem(hourSpan, JSON.stringify(userInput));
     })
 });
